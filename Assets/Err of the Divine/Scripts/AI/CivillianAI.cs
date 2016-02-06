@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class CivillianAI : MonoBehaviour {
+
+    Mob md; // Monster Data
 	
 	/* --------- HP / Hunger ---------*/
 	[Header("Health")]
@@ -72,8 +74,12 @@ public class CivillianAI : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+        // Getting the Monster Data here from the Mob Database
+        md = Utilities.GetMobData("Malice");
+        Debug.Log(md.ID);
+        /////////////////////////////////////////////////////
 
-		mercury = GameObject.FindGameObjectWithTag ("Mercury").GetComponent<MercuryAI> ();
+        mercury = GameObject.FindGameObjectWithTag ("Mercury").GetComponent<MercuryAI> ();
 
 		/* Nav Mesh Properties */
 		agent = GetComponent<NavMeshAgent> ();

@@ -17,6 +17,10 @@ public class Utilities : MonoBehaviour {
         }
     }
 
+    public static Mob GetMobData(string name) {
+        return MobDatabase.Instance.DB[name];
+    }
+
     public static void InstantiateObjectPool(GameObject obj, int amount){
         for(int i=0; i< amount; i++) {
             Instantiate(obj);
