@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\Tien\Nguyen_Tien_Calculator\Assets\Code\TextDisplay.cs">
+    <Files>
+      <File FileName="..\..\..\Tien\Nguyen_Tien_Calculator\Assets\Code\ButtonBehavior.cs" Line="38" Column="1" />
+      <File FileName="..\..\..\Tien\Nguyen_Tien_Calculator\Assets\Code\TextDisplay.cs" Line="44" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
