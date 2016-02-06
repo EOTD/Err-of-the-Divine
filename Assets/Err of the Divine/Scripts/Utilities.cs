@@ -41,10 +41,10 @@ public class Utilities : MonoBehaviour {
     public static void Stun(GameObject target) {
         switch (target.tag) {
             case "Mercury":
-                target.gameObject.GetComponent<MercuryAI>().Stunned();
+                target.gameObject.GetComponent<MercuryAI>().state = MercuryAI.State.Stunned;
                 break;
             case "Malice":
-                target.gameObject.GetComponent<MinionAI>().Stunned();
+                target.gameObject.GetComponent<MinionAI>().state = MinionAI.State.Stunned;
                 break;
 
         }
