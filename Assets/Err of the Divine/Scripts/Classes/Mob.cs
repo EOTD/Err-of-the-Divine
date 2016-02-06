@@ -2,19 +2,19 @@
 using System.Collections;
 
 [System.Serializable]
-public class Mob : InterfaceMob {
+public class Mob : MobInterface {
 
-    public uint mobID;
-    public string mobName;
-    public MobType mobType;
-    public uint mobLevel;
-    public float mobHealth;
-    public uint mobDivinity;
-    public uint mobAtk1;
-    public uint mobAtk2;
-    public uint mobAtk3;
-    public uint mobDrop1;
-    public uint mobDrop2;
+    private uint mobID;
+    private string mobName;
+    private MobType mobType;
+    private uint mobLevel;
+    private float mobHealth;
+    private uint mobDivinity;
+    private uint mobAtk1;
+    private uint mobAtk2;
+    private uint mobAtk3;
+    private uint mobDrop1;
+    private uint mobDrop2;
 
     public Mob(uint id, string name, MobType type, uint level, uint health, uint divinity, uint atk1, uint atk2, uint atk3, uint drop1, uint drop2) {
         mobID = id;

@@ -6,7 +6,7 @@ public enum MobType {
     Standard, Mediocre, Advanced, Mini_Boss, Boss
 }
 
-public interface InterfaceMob { // Interface Mob Database
+public interface MobInterface { // Interface Mob Database
     uint ID { get; set; }
     string Name { get; set; }
     MobType Type { get; set; }
