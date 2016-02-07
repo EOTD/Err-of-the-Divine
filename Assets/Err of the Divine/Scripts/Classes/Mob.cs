@@ -1,20 +1,21 @@
-﻿using System;
+﻿using UnityEngine;
+using System;
 using System.Collections;
 
 [System.Serializable]
 public class Mob : MobInterface {
 
-    private uint mobID;
-    private string mobName;
-    private MobType mobType;
-    private uint mobLevel;
-    private float mobHealth;
-    private uint mobDivinity;
-    private uint mobAtk1;
-    private uint mobAtk2;
-    private uint mobAtk3;
-    private uint mobDrop1;
-    private uint mobDrop2;
+    [SerializeField] private uint mobID;
+    [SerializeField] private string mobName;
+    [SerializeField] private MobType mobType;
+    [SerializeField] private uint mobLevel;
+    [SerializeField] private float mobHealth;
+    [SerializeField] private uint mobDivinity;
+    [SerializeField] private uint mobAtk1;
+    [SerializeField] private uint mobAtk2;
+    [SerializeField] private uint mobAtk3;
+    [SerializeField] private uint mobDrop1;
+    [SerializeField] private uint mobDrop2;
 
     public Mob(uint id, string name, MobType type, uint level, uint health, uint divinity, uint atk1, uint atk2, uint atk3, uint drop1, uint drop2) {
         mobID = id;

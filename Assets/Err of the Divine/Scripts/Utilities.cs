@@ -54,4 +54,8 @@ public class Utilities : MonoBehaviour {
         }
     }
 
+    public static Skill GetSkillData(string name) {
+        return SkillDatabase.Instance.DB[name];
+    }
+
 }
