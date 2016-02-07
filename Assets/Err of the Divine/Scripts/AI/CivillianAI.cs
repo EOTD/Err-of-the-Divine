@@ -76,7 +76,6 @@ public class CivillianAI : MonoBehaviour {
 	void Start () {
         // Getting the Monster Data here from the Mob Database
         md = Utilities.GetMobData("Malice");
-        Debug.Log(md.ID);
         /////////////////////////////////////////////////////
 
         mercury = GameObject.FindGameObjectWithTag ("Mercury").GetComponent<MercuryAI> ();
@@ -111,7 +110,7 @@ public class CivillianAI : MonoBehaviour {
 	
 	private void Idle(){
 		agent.enabled = true;
-		Debug.Log ("Idling");
+		//Debug.Log ("Idling");
 	}
 	
 	private void Wander(){

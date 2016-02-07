@@ -7,7 +7,6 @@ public class Utilities : MonoBehaviour {
         switch (target.gameObject.tag) {
             case "Player":
                 target.GetComponent<Player>().stat.playerHealth += damage;
-                Debug.Log(" Hi");
                 break;
             case "Enemy":
                 //

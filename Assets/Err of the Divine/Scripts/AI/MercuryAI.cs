@@ -428,7 +428,7 @@ public class MercuryAI : MonoBehaviour {
     }
 
     private void Pursue(){
-		Debug.Log ("Pursuing");
+		//Debug.Log ("Pursuing");
 		agent.Resume ();
 
 			switch (behavior) {
