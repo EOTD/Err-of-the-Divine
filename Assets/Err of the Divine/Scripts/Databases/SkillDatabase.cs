@@ -25,12 +25,6 @@ public class SkillDatabase : MonoBehaviour {
 
     }
 
-    void Start() {
-        Skill sd = Utilities.GetSkillData("Feronia");
-
-        Debug.Log(sd.ID);
-    }
-
     private void BuildDatabase() {
         Database.Add(new Skill(4000, "Feronia", AbilityType.Support, 10, 0, 0, 1000));
 
