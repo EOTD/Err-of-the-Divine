@@ -7,27 +7,30 @@ public class Skill : AbilityInterface {
 
     [SerializeField] private uint skillID;
     [SerializeField] private string skillName;
-    [SerializeField] private AbilityType skillType;
+    [SerializeField] private AbilityType skillAbility;
+    [SerializeField] private SkillType skillType;
     [SerializeField] private uint skillCost;
-    [SerializeField] private uint skillAoE;
+    [SerializeField] private uint skillAoe;
     [SerializeField] private uint skillRange;
     [SerializeField] private float skillCooldown;
 
-    public Skill(uint id,  string name, AbilityType type, uint cost, uint aoe, uint range, float cooldown) {
+    public Skill(uint id,  string name, AbilityType ability, int type, uint cost, uint aoe, uint range, float cooldown) {
         skillID = id;
         skillName = name;
-        skillType = type;
+        skillAbility = ability;
+        skillType = (SkillType)type;
         skillCost = cost;
-        skillAoE = aoe;
+        skillAoe = aoe;
         skillRange = range;
         skillCooldown = cooldown;
     }
 
     public uint ID { get { return skillID; } set { skillID = value; } }
     public string Name { get { return skillName; } set { skillName = value; } }
-    public AbilityType Type { get { return skillType; } set { skillType = value; } }
+    public AbilityType Ability { get { return skillAbility; } set { skillAbility = value; } }
+    public SkillType Type { get { return skillType; } set { skillType = value; } }
     public uint Cost { get { return skillCost; } set { skillCost  = value; } }
-    public uint AoE { get { return skillAoE; } set { skillAoE = value; } }
+    public uint AoE { get { return skillAoe; } set { skillAoe = value; } }
     public uint Range { get { return skillRange; } set { skillRange = value; } }
     public float Cooldown { get { return skillCooldown; } set { skillCooldown = value; } }
 }

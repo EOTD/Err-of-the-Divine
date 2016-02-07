@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MobDatabase : MonoBehaviour {
 
-    public List<Mob> Database = new List<Mob>();
+    [SerializeField] private List<Mob> Database = new List<Mob>();
 
     public Dictionary<string, Mob> DB = new Dictionary<string, Mob>();
 
