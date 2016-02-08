@@ -57,4 +57,12 @@ public class Utilities : MonoBehaviour {
         return SkillDatabase.Instance.DB[id];
     }
 
+    public static Item GetItemData(uint id) {
+        return ItemDatabase.Instance.ItemDB[id];
+    }
+
+    public static Weapon GetWeaponData(uint id) {
+        return ItemDatabase.Instance.WeaponDB[id];
+    }
+
 }
