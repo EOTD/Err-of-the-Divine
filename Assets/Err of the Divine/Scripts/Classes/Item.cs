@@ -23,6 +23,16 @@ public class Item : ItemInterface {
         itemStack = stackable;
     }
 
+    public Item(uint id, string name, string desc, uint type, uint quality, uint equipable, uint stackable) {
+        itemID = id;
+        itemName = name;
+        itemDesc = desc;
+        itemType = (ItemType)type;
+        itemQuality = (ItemQuality)quality;
+        itemEquipable = equipable == 0 ? false : true;
+        itemStack = stackable == 0 ? false : true;
+    }
+
     public uint ID {
         get { return itemID; }
         set { itemID = value; }

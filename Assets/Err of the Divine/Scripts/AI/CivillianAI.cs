@@ -75,7 +75,7 @@ public class CivillianAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         // Getting the Monster Data here from the Mob Database
-        md = Utilities.GetMobData("Malice");
+        // md = Utilities.GetMobData("Malice");
         /////////////////////////////////////////////////////
 
         mercury = GameObject.FindGameObjectWithTag ("Mercury").GetComponent<MercuryAI> ();

@@ -1,0 +1,47 @@
+//////////////////////////////////////////////////////////////////////////
+////////////  I t e m  D a t a b a s e  -  b y  S i n h  H o  ////////////
+//////////////////////////////////////////////////////////////////////////
+// ID - Name - Description - Types - Quality - Equipable - Stackable	//
+//////////////////////////////////////////////////////////////////////////
+//																		//
+// ID: The number that specifies each item. No duplicates.				//
+// Name: The name of the item.											//
+// Desc: The description of the item.									//
+// Types: ( 0=Consumable - 1=Weapon - 2=Misc )							//
+// Quality: ( 0=Common - 1=Rare - 2=Epic - 3=Legendary )				//
+// Equipable: ( 0=false - 1=true )										//
+// Stackable: ( 0=false - 1=true )										//
+//																		//
+//////////////////////////////////////////////////////////////////////////
+////////////////////////////  T e m p l a t e  ///////////////////////////
+/*////////////////////////////////////////////////////////////////////////
+{ "id": 2001,	"name": "Handgun",			"desc": "Just a basic gun.",
+   "type": 1,	"quality": 0,	"equipable": 1,	"stackable": 0 },
+////////////////////////////////////////////////////////////////////////*/
+[
+// ONLY INSERT ENTRIES BELOW THIS LINE
+
+{ "id": 2001,	"name": "Handgun",			"desc": "Just a basic gun.",
+   "type": 1,	"quality": 0,	"equipable": 1,	"stackable": 0 
+},
+{ "id": 2002,	"name": "Gladius",			"desc": "A gun that's a little better than the Handgun.",
+	"type": 1,	"quality": 1,	"equipable": 1,	"stackable": 0 
+},
+{ 
+"id": 2003,	"name": "Cestus",			"desc": "A strong and valuable gun.",
+	 "type": 1,	"quality": 2,	"equipable": 1,	"stackable": 0 
+},
+{ 
+"id": 2004,	"name": "Hasta",			"desc": "The strongest gun of them all.",
+	 "type": 1,	"quality": 3,	"equipable": 1,	"stackable": 0 
+},
+{ 
+"id": 2005,	"name": "Feronia's Whip",	"desc": "The Goddess Feronia's sacred  weapon.",
+	"type": 1,	"quality": 3,	"equipable": 1,	"stackable": 0 
+}
+
+// DO NOT INSERT ANY ENTRIES BELOW THIS LINE
+]
+////////////////////////////////////////////////
+// DO NOT PUT A COMMA FOR THE VERY LAST ENTRY //
+////////////////////////////////////////////////

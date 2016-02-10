@@ -1,0 +1,62 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////// S k i l l  D a t a b a s e  by  S i n h  H o ///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ID - Name - Ability - Type - Cost - AoE - Range - Cooldown															  //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//																														  //
+// ID: Specific number that will define the skill. No duplicates.														  //
+// Name: Name of the skill.																								  //
+// Ability: ( Ferona = 0 - Jupiter = 1 - Mars = 2 - Mercury = 3 - Venus = 4 - Vulcan = 5 - Divine = 6 )					  //
+// Type (Support = 0 - Aggressive = 1 - Ground = 2)																		  //
+// Cost: The amount of Divinity that will be depleted upon use.															  //
+// AoE ( Area of Effect ): The amount of cells that the skill will register on.											  //
+// Range: The MAXIMUM DISTANCE that the skill will be able to trigger													  //
+// Cooldown: How long will it take for the skill to be used again														  //
+//																														  //
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////  T  e  m  p  l  a  t  e  /////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+{ "id": 4001,	"name": "Template",				"ability": 0,	"type": 0,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+[
+// ONLY INSERT ENTRIES BELOW THIS LINE
+
+// Feronia
+{ "id": 4001,	"name": "Havest Whip",			"ability": 0,	"type": 0,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4002,	"name": "Penetrate",			"ability": 0,	"type": 0,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4003,	"name": "Absolute Harvest",		"ability": 0,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+
+// Jupiter
+{ "id": 4004,	"name": "Thunderbolt",			"ability": 1,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4005,	"name": "Crackling Fist",		"ability": 1,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4006,	"name": "Violent Maelstrom",	"ability": 1,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+
+// Mars
+{ "id": 4007,	"name": "Bastion",				"ability": 2,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4008,	"name": "Fortify",				"ability": 2,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4009,	"name": "Aspect of Radiance",	"ability": 2,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+
+// Mercury
+{ "id": 4010,	"name": "Rush",					"ability": 3,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4011,	"name": "Flash",				"ability": 3,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4012,	"name": "Maximum Velocity",		"ability": 3,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+
+// Venus 
+{ "id": 4013,	"name": "Fade",					"ability": 4,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4014,	"name": "Seduction",			"ability": 4,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4015,	"name": "Blossom",				"ability": 4,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+
+// Vulcan
+{ "id": 4016,	"name": "Channel",				"ability": 5,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4017,	"name": "Rise",					"ability": 5,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4018,	"name": "Vulcan's Fury",		"ability": 5,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+
+// Divine
+{ "id": 4019,	"name": "Goddess Arsenal",		"ability": 6,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 },
+{ "id": 4020,	"name": "Divine Whip",			"ability": 6,	"type": 1,	"cost": 20,	"aoe": 5,	"range": 5,	"cooldown": 30 }
+
+// DO NOT INSERT ANY ENTRIES BELOW THIS LINE
+]
+////////////////////////////////////////////////
+// DO INSERT A COMMA FOR THE VERY LAST ENTRY //
+////////////////////////////////////////////////

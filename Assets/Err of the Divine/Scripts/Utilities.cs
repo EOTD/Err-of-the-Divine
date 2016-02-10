@@ -16,10 +16,6 @@ public class Utilities : MonoBehaviour {
         }
     }
 
-    public static Mob GetMobData(string name) {
-        return MobDatabase.Instance.DB[name];
-    }
-
     public static void InstantiateObjectPool(GameObject obj, int amount){
         for(int i=0; i< amount; i++) {
             Instantiate(obj);
@@ -54,15 +50,19 @@ public class Utilities : MonoBehaviour {
     }
 
     public static Skill GetSkillData(uint id) {
-        return SkillDatabase.Instance.DB[id];
+        return Databases.Instance.SkillDB[id];
     }
 
     public static Item GetItemData(uint id) {
-        return ItemDatabase.Instance.ItemDB[id];
+        return Databases.Instance.ItemDB[id];
     }
 
     public static Weapon GetWeaponData(uint id) {
-        return ItemDatabase.Instance.WeaponDB[id];
+        return Databases.Instance.WeaponDB[id];
+    }
+
+    public static Mob GetMobData(uint id) {
+        return Databases.Instance.MobDB[id];
     }
 
 }

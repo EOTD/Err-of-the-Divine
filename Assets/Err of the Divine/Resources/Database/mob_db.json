@@ -1,0 +1,38 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// M o n s t e r  D a t a b a s e  by  S i n h  H o //////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ID - Name - Type - Level - Health - Divinty - Atk1 - Atk2 - Atk3 - Drop1 - Drop2											//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//																															//
+// ID: Specific number that will define the Monster. No duplicates.															//
+// Name: The name of the Monster																							//
+// Type (Standard = 0 - Mediocre = 1 -  Advanced = 2 - Mini Boss = 3 - Boss	= 4												//
+// Health: The MAXIMUM health the mob has.																					//
+// Divinity: The MAXIMUM divinity the mob has.																				//
+// Atk1: The amount of damage it's range atk will deal.																		//
+// Atk2: The amount of damage it's melee atk will deal.																		//
+// Atk3: The amount of damage it's special atk will deal.																	//
+// Drop1: The item that the  monster will drop upon DEATH.																	//
+// Drop2: The item that the monster will drop upon HARVEST.																	//
+//																															//
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////  T  e  m  p  l  a  t  e  //////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+{ "id": 1001,	"name": "Template",		"level":  1,	"type": 0,	"health": 25,	"divinity": 100,		"atk1": 20,		"atk2": 30,		"atk3": 40,	"drop1": 3,	"drop2": 40 },
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+[
+// ONLY INSERT ENTRIES BELOW THIS LINE
+
+{ "id": 1001,	"name": "Malice",		"level":  1,	"type": 0,	"health": 25,	"divinity": 100,		"atk1": 20,		"atk2": 30,		"atk3": 40,	"drop1": 3,	"drop2": 40 },
+{ "id": 1002,	"name":	"Feronia",		"level": 99,	"type": 4,	"health": 10,	"divinity": 125,		"atk1": 25,		"atk2": 13,		"atk3": 80,	"drop1": 5,	"drop2": 12 },
+{ "id": 1003,	"name":	"Jupiter",		"level": 20,	"type": 4,	"health": 10,	"divinity": 150,		"atk1": 25,		"atk2": 13,		"atk3": 80,	"drop1": 5,	"drop2": 12 },
+{ "id": 1004,	"name":	"Mars",			"level": 10,	"type": 4,	"health": 10,	"divinity": 170,		"atk1": 25,		"atk2": 13,		"atk3": 80,	"drop1": 5,	"drop2": 12 },
+{ "id": 1005,	"name":	"Mercury",		"level": 30,	"type": 4,	"health": 10,	"divinity": 180,		"atk1": 25,		"atk2": 13,		"atk3": 80,	"drop1": 5,	"drop2": 12 },
+{ "id": 1006,	"name":	"Venus",		"level": 40,	"type": 4,	"health": 10,	"divinity": 190,		"atk1": 25,		"atk2": 13,		"atk3": 80,	"drop1": 5,	"drop2": 12 },
+{ "id": 1007,	"name":	"Vulcan",		"level": 50,	"type": 4,	"health": 10,	"divinity": 200,		"atk1": 25,		"atk2": 13,		"atk3": 80,	"drop1": 5,	"drop2": 12 }
+
+// DO NOT INSERT ANY ENTRIES BELOW THIS LINE
+]
+////////////////////////////////////////////////
+// DO NOT PUT A COMMA FOR THE VERY LAST ENTRY //
+////////////////////////////////////////////////
