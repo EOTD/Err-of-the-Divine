@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using LitJson;
 using System.IO;
 
-public class Databases : MonoBehaviour {
+public class Database : MonoBehaviour {
 
     private string itemFile = "item_db.json";
     private string weaponFile = "weapon_db.json";
@@ -32,8 +32,8 @@ public class Databases : MonoBehaviour {
     public Dictionary<uint, Mob> MobDB = new Dictionary<uint, Mob>();
     private JsonData mobData; // Stores text data to use for the weapon database.
     
-    private static Databases instance;
-    public static Databases Instance { get { return instance; } set { instance = value; } }
+    private static Database instance;
+    public static Database Instance { get { return instance; } set { instance = value; } }
 
     void Awake() {
         if (instance == null)

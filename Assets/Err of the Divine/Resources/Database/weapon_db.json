@@ -3,21 +3,21 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ID - Type - Min - Max - Multiplier - Rate - Accuracy - ADS - Recoil - Range - Falloff Rate - Clip Size - Reload Speed  //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//																														  //
-// ID: Specific number that will define the weapon. No duplicates.														  //
-// Type (Melee=0 - Ranged=1)																							  //
-// Min: The MINIMUM Damage the weapon will deal.																		  //
-// Min: The MAXIMUM Damage the weapon will deal.																		  //
-// Multiplier: The ratio the damage will increase when you hit a vital area.											  //
-// Rate: The speed of the weapon. How fast the gun shoots.																  //
-// Accuracy: The Accuracy Rate of the Weapon percentage wise.															  //
-// ADS: (Aim Down Shot) The precision of when you aim down.																  //
-// Recoil: How much the gun will lift upon fire.																		  //
-// Range: The MAXIMUM DISTANCE that the weapon will deal the most damage.												  //
-// Fall-off Rate: The rate of which the weapon will decrease in power.													  //
-// Clipsize: The maximum ammunition to dispense before needing to reload												  //
-// Reload Speed: How long does it take for the gun to reload															  //
-//																														  //
+//
+// ID: Specific number that will define the weapon. No duplicates.
+// Type (Melee=0 - Ranged=1)
+// Min: The MINIMUM Damage the weapon will deal.
+// Min: The MAXIMUM Damage the weapon will deal.
+// Multiplier: The ratio the damage will increase when you hit a vital area.
+// Rate: The speed of the weapon. How fast the gun shoots.
+// Accuracy: The Accuracy Rate of the Weapon percentage wise.
+// ADS: (Aim Down Shot) The precision of when you aim down.
+// Recoil: How much the gun will lift upon fire.
+// Range: The MAXIMUM DISTANCE that the weapon will deal the most damage.
+// Fall-off Rate: The rate of which the weapon will decrease in power.
+// Clipsize: The maximum ammunition to dispense before needing to reload
+// Reload Speed: How long does it take for the gun to reload
+//																													
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////  T  e  m  p  l  a  t  e  /////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
