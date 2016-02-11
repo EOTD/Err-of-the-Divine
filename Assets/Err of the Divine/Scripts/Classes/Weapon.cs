@@ -34,6 +34,22 @@ public class Weapon : WeaponInterface {
         weaponReloadSpd = reloadSpd;
     }
 
+    public Weapon(uint id, uint type, uint min, uint max, float multiplier, float rate, float accuracy, float ads, float recoil, uint range, float falloff, uint size, float reloadSpd) {
+        weaponID = id;
+        weaponType = (WeaponType)type;
+        weaponMinDmg = min;
+        weaponMaxDmg = max;
+        weaponMultiplier = multiplier;
+        weaponRate = rate;
+        weaponAccuracy = accuracy;
+        weaponADS = ads;
+        weaponRecoil = recoil;
+        weaponRange = range;
+        weaponFallOff = falloff;
+        weaponClipSize = size;
+        weaponReloadSpd = reloadSpd;
+    }
+
     public uint ID {
         get { return weaponID; }
         set { weaponID = value; }

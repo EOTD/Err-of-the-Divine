@@ -31,6 +31,20 @@ public class Mob : MobInterface {
         mobDrop2 = drop2;
     }
 
+    public Mob(uint id, string name, uint type, uint level, uint health, uint divinity, uint atk1, uint atk2, uint atk3, uint drop1, uint drop2) {
+        mobID = id;
+        mobName = name;
+        mobType = (MobType)type;
+        mobLevel = level;
+        mobHealth = health;
+        mobDivinity = divinity;
+        mobAtk1 = atk1;
+        mobAtk2 = atk2;
+        mobAtk3 = atk3;
+        mobDrop1 = drop1;
+        mobDrop2 = drop2;
+    }
+
     public uint ID { get { return mobID; } set { mobID = value; } }
     public string Name { get { return mobName; } set { mobName = value; } }
     public MobType Type { get { return mobType; } set { mobType = value; } }

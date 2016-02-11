@@ -14,15 +14,30 @@ public class Skill : AbilityInterface {
     [SerializeField] private uint skillRange;
     [SerializeField] private float skillCooldown;
 
-    public Skill(uint id,  string name, AbilityType ability, int type, uint cost, uint aoe, uint range, float cooldown) {
+    public Skill(uint id,  string name, AbilityType ability, SkillType type, uint cost, uint aoe, uint range, float cooldown) {
         skillID = id;
         skillName = name;
         skillAbility = ability;
+        skillType = type;
+        skillCost = cost;
+        skillAoe = aoe;
+        skillRange = range;
+        skillCooldown = cooldown;
+    }
+
+    public Skill(uint id, string name, uint ability, uint type, uint cost, uint aoe, uint range, float cooldown) {
+        skillID = id;
+        skillName = name;
+        skillAbility = (AbilityType)ability;
         skillType = (SkillType)type;
         skillCost = cost;
         skillAoe = aoe;
         skillRange = range;
         skillCooldown = cooldown;
+    }
+
+    public Skill() {
+        skillID = 0;
     }
 
     public uint ID { get { return skillID; } set { skillID = value; } }

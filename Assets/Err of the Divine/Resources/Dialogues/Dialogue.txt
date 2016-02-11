@@ -1,0 +1,7 @@
+Mercury,"Who goes there?!",0,R
+Yuima,"You cower",1,L
+Yuima,"( Crap... Did he see me...? )",1,L
+Mercury,"You don't think im that stupid to hear you bumping into that crate, do you?",0,R
+Yuima,"- You come out of hiding .",1,L
+Mercury,"Well well well, who do we have here...",0,R
+Mercury,"What do you know! It's that cursed goddess' pet!",0,R
