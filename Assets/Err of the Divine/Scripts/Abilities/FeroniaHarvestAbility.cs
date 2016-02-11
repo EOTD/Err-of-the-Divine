@@ -18,7 +18,8 @@ public class FeroniaHarvestAbility : MonoBehaviour {
 
 	[HideInInspector]
 	public bool isHarvesting = false;
-	private float harvestTime = 0f;
+	[HideInInspector]
+	public float harvestTime = 10000f; // For the duration of the harvest, used to know when the player is holding down F or continually pressing F
 
 	// Temp variables until animation is ready
 	public GameObject whip; // For testing I'm using a box collider
@@ -28,44 +29,53 @@ public class FeroniaHarvestAbility : MonoBehaviour {
 	}
 	
 	void Update () {
-	// Begin check main ability
-		if (Input.GetKey(KeyCode.F) && manager.abilities[manager.i].ToString() == "Feronia" && !isHarvesting && main && manager.divinity > mainCost){
+		// Begin check main ability
+		if (Input.GetKeyDown (KeyCode.F) && manager.abilities [manager.i].ToString () == "Feronia" && !isHarvesting && main && manager.divinity > mainCost) {
 			manager.divinity -= mainCost;
 			// Play animation
-
-			whip.SetActive(true); // Temporary for testing
+			Debug.Log ("murrrrrrrr");
+			whip.SetActive (true); // Temporary for testing
 			isHarvesting = true;
 		}
-		else if (!isHarvesting && main){
+
+		else if (Input.GetKeyUp (KeyCode.F) && manager.abilities [manager.i].ToString () == "Feronia" && isHarvesting && main) {
+			harvestTime = 0.5f;
+			Debug.Log("Am I here?");
+		}
+
+		
+		if (harvestTime > 0 && isHarvesting) {
+			harvestTime -= Time.deltaTime;
+		}
+		else if (harvestTime <= 0 && isHarvesting){
 			whip.SetActive(false); // Temporary for testing
 			isHarvesting = false;
+			harvestTime = 10000f;
 		}
 	// End main ability checks
 
 	// Begin sub ability checks
-		else if (Input.GetKeyDown(KeyCode.F) && manager.abilities[manager.i].ToString() == "Feronia" && !main){
+		else if (Input.GetKeyDown (KeyCode.F) && manager.abilities [manager.i].ToString () == "Feronia" && !main) {
 			manager.divinity -= subCost;
 
-			Collider[] colliders = Physics.OverlapSphere(this.transform.position, penetrateRadius, 1<<10); // Find all colliders on layer 10
+			Collider[] colliders = Physics.OverlapSphere (this.transform.position, penetrateRadius, 1 << 10); // Find all colliders on layer 10
 			foreach (Collider hit in colliders) {
 
-				ChangeMat mat = hit.GetComponent<ChangeMat>();
+				ChangeMat mat = hit.GetComponent<ChangeMat> ();
 
-				if (mat != null){
-					mat.changeMat(); // Call changeMat function to change the material to penetrate
+				if (mat != null) {
+					mat.changeMat (); // Call changeMat function to change the material to penetrate
 				}
 			}
-		}
+		} else if (Input.GetKeyUp (KeyCode.F) && manager.abilities [manager.i].ToString () == "Feronia" && !main && manager.divinity > subCost) {
 
-		else if (Input.GetKeyUp(KeyCode.F) && manager.abilities[manager.i].ToString() == "Feronia" && !main && manager.divinity > subCost){
-
-			Collider[] colliders = Physics.OverlapSphere(this.transform.position, penetrateRadius, 1<<10);
+			Collider[] colliders = Physics.OverlapSphere (this.transform.position, penetrateRadius, 1 << 10);
 			foreach (Collider hit in colliders) {
 
-				ChangeMat mat = hit.GetComponent<ChangeMat>();
+				ChangeMat mat = hit.GetComponent<ChangeMat> ();
 				
-				if (mat != null){
-					mat.changeMat(); // Change material back to the normal one
+				if (mat != null) {
+					mat.changeMat (); // Change material back to the normal one
 				}
 			}
 		}

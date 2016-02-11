@@ -14,6 +14,7 @@ public class FeroniaHarvest : MonoBehaviour {
 	public FeroniaHarvestAbility harvest;
 
 	void OnTriggerEnter(Collider other){
+		Debug.Log ("Being called?");
 		if (other.gameObject.tag != "Player"){ // because we don't want the grenade to disappear as soon as you throw it
 
 			mAI = other.GetComponent<MercuryAI>();
@@ -21,11 +22,12 @@ public class FeroniaHarvest : MonoBehaviour {
 			if (mAI != null){
 				Debug.Log("Hit Enemy");
 				enemyHit = true;
-				mAI.state = MercuryAI.State.Idle;
+				//mAI.state = MercuryAI.State.Stunned;
+				Utilities.Stun(mAI.gameObject);
 				//hit.GetComponent<MercuryAI>().state = MercuryAI.State.Idle;
 				
 				if (enemyHit == true){
-					if (Input.GetKeyDown(KeyCode.F) && harvest.isHarvesting){
+					if (Input.GetKeyDown(KeyCode.F) && harvest.isHarvesting && harvest.harvestTime < 1f){
 						mAI.currentHealth -= damage;
 					}
 				}
