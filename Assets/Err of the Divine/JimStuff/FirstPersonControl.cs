@@ -47,7 +47,9 @@ public class FirstPersonControl : MonoBehaviour {
 		if(characterController.isGrounded && Input.GetButtonDown("Crouch"))
 		{
 			movementSpeed = crouchSpeed;
-			this.transform.position = Vector3.up * 0.5f;
+			//this.transform.position = Vector3.up * 0.5f;
+			//This won't work since it like resetting, (0,1,0) * 5 again and again.
+
 		}
 		else if(characterController.isGrounded && Input.GetButtonUp("Crouch"))
 		{
