@@ -381,6 +381,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1114207fe9bbc428d827e977e0ca19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &292762211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 292762212}
+  - 114: {fileID: 292762213}
+  m_Layer: 0
+  m_Name: Handgun
+  m_TagString: Weapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &292762212
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 292762211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12, y: 0.7, z: 30.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1761430337}
+  m_RootOrder: 1
+--- !u!114 &292762213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 292762211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d165424c1e9fcb4aa8415ac999fc03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponID: 2001
+  particle: {fileID: 179684, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
 --- !u!1 &340729974
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +433,7 @@ GameObject:
   - 114: {fileID: 340729976}
   m_Layer: 0
   m_Name: Gladius
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +445,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 340729974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.12, y: 0.7, z: 30.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1761430337}
@@ -421,6 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponID: 2002
+  particle: {fileID: 179684, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
 --- !u!1001 &380910231
 Prefab:
   m_ObjectHideFlags: 0
@@ -912,6 +954,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
+--- !u!1001 &849657523
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.70710695
+      objectReference: {fileID: 0}
+    - target: {fileID: 496290, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 19867220, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 19867220, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 93da9c06b6951a4449366f602c7a88cf, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1105624677
 Prefab:
   m_ObjectHideFlags: 0
@@ -1216,6 +1308,17 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_PrefabInternal: {fileID: 1105624677}
+--- !u!114 &1508812533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1508812526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cb743a81664ac4db024aad836b249b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1525917192
 Prefab:
   m_ObjectHideFlags: 0
@@ -1543,10 +1646,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761430336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -28.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 340729975}
+  - {fileID: 292762212}
   m_Father: {fileID: 1508812531}
   m_RootOrder: 2
 --- !u!1 &1894682156
@@ -1557,7 +1661,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1894682158}
-  - 114: {fileID: 1894682159}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1581,21 +1684,6 @@ Transform:
   - {fileID: 200576097}
   m_Father: {fileID: 0}
   m_RootOrder: 9
---- !u!114 &1894682159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1894682156}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e9393d21516214194e9f60961a0eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectPrefabs:
-  - {fileID: 0}
-  amountToBuffer: 0a000000
-  defaultBufferAmount: 3
 --- !u!4 &1914739970 stripped
 Transform:
   m_PrefabParentObject: {fileID: 421142, guid: bcf0495b0fb6b5a40a16468b5dc27faa, type: 2}

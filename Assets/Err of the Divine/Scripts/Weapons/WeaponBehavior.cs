@@ -5,7 +5,7 @@ public class WeaponBehavior : MonoBehaviour {
 
     [SerializeField] private uint weaponID;
 
-    private string weaponName;
+    string weaponName;
 
     uint weaponMinDmg; uint weaponMaxDmg; float weaponMultiplier; float weaponRate; float weaponAccuracy; float weaponADS; float weaponRecoil;
     uint weaponRange; float weaponFallOff; uint weaponClipSize; float weaponReloadSpd;
@@ -13,7 +13,16 @@ public class WeaponBehavior : MonoBehaviour {
     private RaycastHit hit;
     private Ray ray;
 
-    public float rateTime;
+    // Timer Variables
+    private float rateTime;
+    private float reloadTime;
+
+    private bool isReloading;
+
+    private uint clipSize;
+
+    public GameObject particle;
+
 	
 	void Start () {
         SetWeaponData();
@@ -21,17 +30,24 @@ public class WeaponBehavior : MonoBehaviour {
 
     void Update() {
 
+        // Shoot Mouse Button
         if (Input.GetMouseButton(0) && Fireable()) {
-            Debug.Log("Hi");
             StartCoroutine(DecreaseRateTimer());
             // Set shooting position to the center of the Camera.
             int x = Screen.width / 2; int y = Screen.height / 2;
             ray = Camera.main.ScreenPointToRay(new Vector3(x, y));
 
-            // Getting the weapon function
+            // Calling the weapon function
             InitiateWeaponBehavior();
-            //Debug.DrawRay(ray.origin, ray.direction * 30000, new Color(1f, 0f, 0f, 1f));
         }
+
+        // Reload Key R
+        if (Input.GetKeyDown(KeyCode.R)) {
+            if (!MaximumCapacity()) {
+                StartCoroutine(Reload());
+            }
+        }
+
     }
 
     // All of the weapon's behavior are located here.
@@ -55,13 +71,21 @@ public class WeaponBehavior : MonoBehaviour {
                             break;
                         }
                     }
+                    // Get the Raycast hit position and rotation to Instantiate the particle.
+                    EmitParticle(hit.point, Quaternion.LookRotation(hit.normal));
                 }
                 break;
 
             case 2003:
                 break;
         }
+        DecreaseAmmo();
 
+    }
+
+    // Creates the particle when fired.
+    void EmitParticle(Vector3 pos, Quaternion rot) {
+        Instantiate(particle, pos, Quaternion.identity);
     }
 
     // Calculate the Rate of Fire here
@@ -78,7 +102,7 @@ public class WeaponBehavior : MonoBehaviour {
 
     // Check if item is fireable with the rate of fire. This is just here to make things look fancy.
     private bool Fireable() {
-        if (rateTime >= weaponRate)
+        if (rateTime >= weaponRate && CheckAmmo() && !isReloading)
             return true;
         else
             return false;
@@ -103,6 +127,51 @@ public class WeaponBehavior : MonoBehaviour {
         weaponClipSize = Utilities.GetWeaponData(weaponID).ClipSize;
         weaponReloadSpd = Utilities.GetWeaponData(weaponID).ReloadSpd;
 
+        clipSize = weaponClipSize;
         rateTime = weaponRate;
+    }
+
+    private bool CheckAmmo() {
+        return clipSize > 0 ? true : false;
+    }
+
+    private bool MaximumCapacity() {
+        return clipSize >= weaponClipSize ? true : false;
+    }
+
+    void DecreaseAmmo() {
+        if(clipSize > 0) {
+            clipSize--;
+        }
+    }
+
+    private IEnumerator Reload() {
+        if (!isReloading) {
+            while (reloadTime < weaponReloadSpd) {
+                isReloading = true;
+                reloadTime += Time.deltaTime;
+                yield return null;
+            }
+            if (reloadTime >= weaponReloadSpd) {
+                reloadTime = 0;
+                isReloading = false;
+                clipSize = weaponClipSize;
+            }
+        
+        }
+        yield return null;
+    }
+
+    public void Reinitialize() {
+        reloadTime = 0;
+        rateTime = weaponRate;
+        isReloading = false;
+        StopAllCoroutines();
+    }
+
+
+    void OnGUI() {
+        // Weapon Information at bottom left of the screen. Name and Ammo
+        GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weaponClipSize);
     }
 }
