@@ -328,7 +328,7 @@ public class MercuryAI : MonoBehaviour {
 			if (meleeTime <= 0) {
 				isMelee = true;
 				meleeTime = meleeDelay;
-                Utilities.AdjustHealth(player, -5f);
+                Utilities.AdjustHealth(player, -5);
 				Debug.Log ("Melee Attack!");
 				StartCoroutine (MeleeCooldown ());
 

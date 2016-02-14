@@ -52,7 +52,7 @@ public class BulletBehavior : MonoBehaviour {
         switch (col.gameObject.tag)
         {
             case "Player":
-                Utilities.AdjustHealth(col.gameObject, -1f);
+                Utilities.AdjustHealth(col.gameObject, -1);
                 Debug.Log("Hit Player with Bullet");
                 Deactivate();
                 break;

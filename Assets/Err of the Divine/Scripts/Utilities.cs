@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Utilities : MonoBehaviour {
 
-    public static void AdjustHealth(GameObject target, float damage) {
+    public static void AdjustHealth(GameObject target, int damage) {
         switch (target.gameObject.tag) {
             case "Player":
                 target.GetComponent<Player>().stat.playerHealth += damage;
@@ -11,6 +11,10 @@ public class Utilities : MonoBehaviour {
             case "Enemy":
                 //
                 break;
+            case "Mercury":
+                target.GetComponent<MercuryAI>().currentHealth += damage;
+                break;
+
             default:
                 break;
         }
@@ -63,6 +67,10 @@ public class Utilities : MonoBehaviour {
 
     public static Mob GetMobData(uint id) {
         return Database.Instance.MobDB[id];
+    }
+
+    public static string[] GetEnemyTags() {
+        return new string[] { "Mercury", "Enemy", "Civillian" };
     }
 
 }
