@@ -3,12 +3,24 @@ using System.Collections;
 
 public class WeaponSwitch : MonoBehaviour {
 
-    GameObject[] weapons;
+    public GameObject[] weapons;
+    public GameObject primary, secondary;
+    public
 	// Use this for initialization
 	void Start () {
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
         DisableWeapons();
-        weapons[0].SetActive(true);
+
+        foreach(GameObject weapon in weapons) {
+            if(weapon.name == "Handgun") {
+                secondary = weapon;
+            }
+            if (weapon.name == "Gladius") {
+                primary = weapon;
+            }
+        }
+
+        primary.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -19,11 +31,17 @@ public class WeaponSwitch : MonoBehaviour {
     void SwitchWeapon() {
         if (Input.GetKey(KeyCode.Alpha1)) {
             DisableWeapons();
-            weapons[0].SetActive(true);
+            //weapons[0].SetActive(true);
+            primary.SetActive(true);
         }
         else if (Input.GetKey(KeyCode.Alpha2)) {
             DisableWeapons();
-            weapons[1].SetActive(true);
+            //weapons[1].SetActive(true);
+            secondary.SetActive(true);
+        }
+        else if (Input.GetKey(KeyCode.Alpha3)) {
+            DisableWeapons();
+            weapons[0].SetActive(true);
         }
     }
 

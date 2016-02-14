@@ -30,12 +30,17 @@ public class WeaponBehavior : MonoBehaviour {
 
     void Update() {
 
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Camera.main.transform.rotation, 1000f * Time.deltaTime);
+
         // Shoot Mouse Button
         if (Input.GetMouseButton(0) && Fireable()) {
             StartCoroutine(DecreaseRateTimer());
+
             // Set shooting position to the center of the Camera.
             int x = Screen.width / 2; int y = Screen.height / 2;
             ray = Camera.main.ScreenPointToRay(new Vector3(x, y));
+
 
             // Calling the weapon function
             InitiateWeaponBehavior();
@@ -58,6 +63,19 @@ public class WeaponBehavior : MonoBehaviour {
         switch (weaponID) {
 
             case 2001: // Handgun
+                if (Physics.Raycast(ray, out hit, weaponRange)) {
+
+                    // Get all the Enemy tags that you assigned in the Utilities script.
+                    foreach (string tag in Utilities.GetEnemyTags()) {
+                        if (hit.collider.tag == tag) {
+                            GameObject hitObj = hit.collider.gameObject;
+                            Utilities.AdjustHealth(hitObj, CalculateDamage());
+                            break;
+                        }
+                    }
+                    // Get the Raycast hit position and rotation to Instantiate the particle.
+                    EmitParticle(hit.point, Quaternion.LookRotation(hit.normal));
+                }
                 break;
 
             case 2002: // Gladius
@@ -85,7 +103,8 @@ public class WeaponBehavior : MonoBehaviour {
 
     // Creates the particle when fired.
     void EmitParticle(Vector3 pos, Quaternion rot) {
-        Instantiate(particle, pos, Quaternion.identity);
+        GameObject par = Instantiate(particle, pos, Quaternion.identity) as GameObject;
+        Destroy(par, 1f);
     }
 
     // Calculate the Rate of Fire here
@@ -172,6 +191,12 @@ public class WeaponBehavior : MonoBehaviour {
 
     void OnGUI() {
         // Weapon Information at bottom left of the screen. Name and Ammo
-        GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weaponClipSize);
+        if(CheckAmmo())
+            GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weaponClipSize);
+        else
+            GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40), weaponName + " \n'R' to Reload");
+
+        // Temporary Crosshair
+        GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 10f, 10f), "x");
     }
 }

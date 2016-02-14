@@ -10,7 +10,8 @@ public class Database : MonoBehaviour {
     private string weaponFile = "weapon_db.json";
     private string mobFile = "mob_db.json";
     private string skillFile = "skill_db.json";
-    private string fileDirectory = "/Err of the Divine/Resources/Database/";
+    //private string fileDirectory = "/Err of the Divine/StreamingAssets/Database/";
+    private string fileDirectory = "/Database/";
 
     [Header("Item Database")]
     [SerializeField] private List<Item> ITEM_DATABASE = new List<Item>();
@@ -130,7 +131,8 @@ public class Database : MonoBehaviour {
     }
 
     private JsonData GetTextData(string filename) {
-        return JsonMapper.ToObject(File.ReadAllText(Application.dataPath + fileDirectory + filename));
+        //return JsonMapper.ToObject(File.ReadAllText(Application.dataPath + fileDirectory + filename));
+        return JsonMapper.ToObject(File.ReadAllText(Application.streamingAssetsPath + fileDirectory + filename));
     }
 
     private void StoreDatabase() {
