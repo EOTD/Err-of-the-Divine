@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat:
-    playerHealth: 0
+    playerHealth: 100
     playerRegenRate: 0
     playerRegenDelay: 0
     playerDivinity: 0

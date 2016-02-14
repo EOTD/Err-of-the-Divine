@@ -13,16 +13,17 @@ public class WeaponBehavior : MonoBehaviour {
     private RaycastHit hit;
     private Ray ray;
 
-	// Use this for initialization
+    public float rateTime;
+	
 	void Start () {
         SetWeaponData();
 	}
 
-    // Update is called once per frame
     void Update() {
 
-        if (Input.GetMouseButtonDown(0)) {
-
+        if (Input.GetMouseButton(0) && Fireable()) {
+            Debug.Log("Hi");
+            StartCoroutine(DecreaseRateTimer());
             // Set shooting position to the center of the Camera.
             int x = Screen.width / 2; int y = Screen.height / 2;
             ray = Camera.main.ScreenPointToRay(new Vector3(x, y));
@@ -33,10 +34,11 @@ public class WeaponBehavior : MonoBehaviour {
         }
     }
 
-	// All of the weapon's behavior are located here.
-	private void InitiateWeaponBehavior() {
+    // All of the weapon's behavior are located here.
+    private void InitiateWeaponBehavior() {
 
         // We're going to do a seperate case for each individual weapon.
+
         switch (weaponID) {
 
             case 2001: // Handgun
@@ -48,8 +50,8 @@ public class WeaponBehavior : MonoBehaviour {
                     // Get all the Enemy tags that you assigned in the Utilities script.
                     foreach (string tag in Utilities.GetEnemyTags()) {
                         if (hit.collider.tag == tag) {
-                            Debug.Log("You hit "+ hit.collider.tag+ " and dealt " + CalculateDamage());
-                            Utilities.AdjustHealth(hit.collider.gameObject, CalculateDamage());
+                            GameObject hitObj = hit.collider.gameObject;
+                            Utilities.AdjustHealth(hitObj, CalculateDamage());
                             break;
                         }
                     }
@@ -60,6 +62,26 @@ public class WeaponBehavior : MonoBehaviour {
                 break;
         }
 
+    }
+
+    // Calculate the Rate of Fire here
+    private IEnumerator DecreaseRateTimer() {
+        while (rateTime > 0) {
+            rateTime -= Time.deltaTime;
+            yield return null;
+        }
+        if (rateTime <= 0) {
+            rateTime = weaponRate;
+        }
+        yield return null;
+    }
+
+    // Check if item is fireable with the rate of fire. This is just here to make things look fancy.
+    private bool Fireable() {
+        if (rateTime >= weaponRate)
+            return true;
+        else
+            return false;
     }
 
     private int CalculateDamage() {
@@ -80,5 +102,7 @@ public class WeaponBehavior : MonoBehaviour {
         weaponFallOff = Utilities.GetWeaponData(weaponID).FallOff;
         weaponClipSize = Utilities.GetWeaponData(weaponID).ClipSize;
         weaponReloadSpd = Utilities.GetWeaponData(weaponID).ReloadSpd;
+
+        rateTime = weaponRate;
     }
 }
