@@ -4,8 +4,7 @@ using System.Collections;
 public class WeaponSwitch : MonoBehaviour {
 
     public GameObject[] weapons;
-    public GameObject primary, secondary;
-    public
+    public GameObject primary, secondary, third;
 	// Use this for initialization
 	void Start () {
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
@@ -14,9 +13,11 @@ public class WeaponSwitch : MonoBehaviour {
         foreach(GameObject weapon in weapons) {
             if(weapon.name == "Handgun") {
                 secondary = weapon;
-            }
-            if (weapon.name == "Gladius") {
+            } else if (weapon.name == "Gladius") {
                 primary = weapon;
+            }
+            else if (weapon.name == "Cestus") {
+                third = weapon;
             }
         }
 
@@ -41,7 +42,7 @@ public class WeaponSwitch : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.Alpha3)) {
             DisableWeapons();
-            weapons[0].SetActive(true);
+            third.SetActive(true);
         }
     }
 

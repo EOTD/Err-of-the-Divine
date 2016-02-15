@@ -1142,7 +1142,7 @@ GameObject:
   - 4: {fileID: 850070601}
   - 114: {fileID: 850070602}
   m_Layer: 0
-  m_Name: Shotgun
+  m_Name: Cestus
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1538,6 +1538,7 @@ MonoBehaviour:
   weapons: []
   primary: {fileID: 0}
   secondary: {fileID: 0}
+  third: {fileID: 0}
 --- !u!1001 &1525917192
 Prefab:
   m_ObjectHideFlags: 0

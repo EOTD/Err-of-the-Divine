@@ -35,7 +35,6 @@ public class WeaponBehavior : MonoBehaviour {
 
         // Shoot Mouse Button
         if (Input.GetMouseButton(0) && Fireable()) {
-            StartCoroutine(DecreaseRateTimer());
 
             // Set shooting position to the center of the Camera.
             int x = Screen.width / 2; int y = Screen.height / 2;
@@ -57,6 +56,9 @@ public class WeaponBehavior : MonoBehaviour {
 
     // All of the weapon's behavior are located here.
     private void InitiateWeaponBehavior() {
+
+
+        StartCoroutine(DecreaseRateTimer());
 
         // We're going to do a seperate case for each individual weapon.
 

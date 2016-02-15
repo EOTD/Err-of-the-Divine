@@ -19,6 +19,6 @@ public class GameUI : MonoBehaviour {
         GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 50, 150f, 20), "Divinity: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerDivinity );
         GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 30, 150f, 20), "Health: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerHealth);
 
-        GUI.TextField(new Rect(Screen.width * 0.03f, Screen.height - 200, 50f, 150), "w\ne\na\np\no\nt\ny\np\ne");
+        GUI.TextField(new Rect(Screen.width * 0.03f, Screen.height - 200, 50f, 150), "\n g \n o \n d \n\n t \n y \n p \n e");
     }
 }
