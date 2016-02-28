@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum WeaponType {
-    Melee, Range
+    Manual, Automatic
 }
 
 public interface WeaponInterface {

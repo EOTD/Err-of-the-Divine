@@ -5,10 +5,12 @@ public class WeaponBehavior : MonoBehaviour {
 
     [SerializeField] private uint weaponID;
 
+    Weapon weapon;
+
     string weaponName;
 
-    uint weaponMinDmg; uint weaponMaxDmg; float weaponMultiplier; float weaponRate; float weaponAccuracy; float weaponADS; float weaponRecoil;
-    uint weaponRange; float weaponFallOff; uint weaponClipSize; float weaponReloadSpd;
+    //uint weaponMinDmg; uint weaponMaxDmg; float weaponMultiplier; float weaponRate; float weaponAccuracy; float weaponADS; float weaponRecoil;
+    //uint weaponRange; float weaponFallOff; uint weaponClipSize; float weaponReloadSpd;
 
     private RaycastHit hit;
     private Ray ray;
@@ -32,17 +34,31 @@ public class WeaponBehavior : MonoBehaviour {
 
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Camera.main.transform.rotation, 1000f * Time.deltaTime);
+        switch(weapon.Type) {
+            case WeaponType.Automatic:
+                // Shoot Mouse Button
+                if (Input.GetMouseButton(0) && Fireable()) {
 
-        // Shoot Mouse Button
-        if (Input.GetMouseButton(0) && Fireable()) {
-
-            // Set shooting position to the center of the Camera.
-            int x = Screen.width / 2; int y = Screen.height / 2;
-            ray = Camera.main.ScreenPointToRay(new Vector3(x, y));
+                    // Set shooting position to the center of the Camera.
+                    int x = Screen.width / 2; int y = Screen.height / 2;
+                    ray = Camera.main.ScreenPointToRay(new Vector3(x, y));
 
 
-            // Calling the weapon function
-            InitiateWeaponBehavior();
+                    // Calling the weapon function
+                    InitiateWeaponBehavior();
+                }
+                break;
+            case WeaponType.Manual:
+                if (Input.GetMouseButtonDown(0) && Fireable()) {
+                    // Set shooting position to the center of the Camera.
+                    int x = Screen.width / 2; int y = Screen.height / 2;
+                    ray = Camera.main.ScreenPointToRay(new Vector3(x, y));
+
+
+                    // Calling the weapon function
+                    InitiateWeaponBehavior();
+                }
+                break;
         }
 
         // Reload Key R
@@ -65,7 +81,7 @@ public class WeaponBehavior : MonoBehaviour {
         switch (weaponID) {
 
             case 2001: // Handgun
-                if (Physics.Raycast(ray, out hit, weaponRange)) {
+                if (Physics.Raycast(ray, out hit, weapon.Range)) {
 
                     // Get all the Enemy tags that you assigned in the Utilities script.
                     foreach (string tag in Utilities.GetEnemyTags()) {
@@ -81,7 +97,7 @@ public class WeaponBehavior : MonoBehaviour {
                 break;
 
             case 2002: // Gladius
-                if (Physics.Raycast(ray, out hit, weaponRange)) {
+                if (Physics.Raycast(ray, out hit, weapon.Range)) {
 
                     // Get all the Enemy tags that you assigned in the Utilities script.
                     foreach (string tag in Utilities.GetEnemyTags()) {
@@ -116,40 +132,32 @@ public class WeaponBehavior : MonoBehaviour {
             yield return null;
         }
         if (rateTime <= 0) {
-            rateTime = weaponRate;
+            rateTime = weapon.Rate;
         }
         yield return null;
     }
 
     // Check if item is fireable with the rate of fire. This is just here to make things look fancy.
     private bool Fireable() {
-        if (rateTime >= weaponRate && CheckAmmo() && !isReloading)
+        if (rateTime >= weapon.Rate && CheckAmmo() && !isReloading)
             return true;
         else
             return false;
     }
 
     private int CalculateDamage() {
-        return (int)-Random.Range(weaponMinDmg, weaponMaxDmg);
+        return (int)-Random.Range(weapon.MinDamage, weapon.MaxDamage);
     }
 
     // This will get the weapon data from the weapon_db.json
     private void SetWeaponData() {
-        weaponName = Utilities.GetItemData(weaponID).Name;
-        weaponMinDmg = Utilities.GetWeaponData(weaponID).MinDamage;
-        weaponMaxDmg = Utilities.GetWeaponData(weaponID).MaxDamage;
-        weaponMultiplier = Utilities.GetWeaponData(weaponID).Multiplier;
-        weaponRate = Utilities.GetWeaponData(weaponID).Rate;
-        weaponAccuracy = Utilities.GetWeaponData(weaponID).Accuracy;
-        weaponADS = Utilities.GetWeaponData(weaponID).ADS;
-        weaponRecoil = Utilities.GetWeaponData(weaponID).Recoil;
-        weaponRange = Utilities.GetWeaponData(weaponID).Range;
-        weaponFallOff = Utilities.GetWeaponData(weaponID).FallOff;
-        weaponClipSize = Utilities.GetWeaponData(weaponID).ClipSize;
-        weaponReloadSpd = Utilities.GetWeaponData(weaponID).ReloadSpd;
 
-        clipSize = weaponClipSize;
-        rateTime = weaponRate;
+        weapon = Utilities.GetWeaponData(weaponID);
+        weaponName = Utilities.GetItemData(weaponID).Name;
+
+
+        clipSize = weapon.ClipSize;
+        rateTime = weapon.Rate;
     }
 
     private bool CheckAmmo() {
@@ -157,7 +165,7 @@ public class WeaponBehavior : MonoBehaviour {
     }
 
     private bool MaximumCapacity() {
-        return clipSize >= weaponClipSize ? true : false;
+        return clipSize >= weapon.ClipSize ? true : false;
     }
 
     void DecreaseAmmo() {
@@ -168,15 +176,15 @@ public class WeaponBehavior : MonoBehaviour {
 
     private IEnumerator Reload() {
         if (!isReloading) {
-            while (reloadTime < weaponReloadSpd) {
+            while (reloadTime < weapon.ReloadSpd) {
                 isReloading = true;
                 reloadTime += Time.deltaTime;
                 yield return null;
             }
-            if (reloadTime >= weaponReloadSpd) {
+            if (reloadTime >= weapon.ReloadSpd) {
                 reloadTime = 0;
                 isReloading = false;
-                clipSize = weaponClipSize;
+                clipSize = weapon.ClipSize;
             }
         
         }
@@ -185,7 +193,7 @@ public class WeaponBehavior : MonoBehaviour {
 
     public void Reinitialize() {
         reloadTime = 0;
-        rateTime = weaponRate;
+        rateTime = weapon.Rate;
         isReloading = false;
         StopAllCoroutines();
     }
@@ -194,7 +202,7 @@ public class WeaponBehavior : MonoBehaviour {
     void OnGUI() {
         // Weapon Information at bottom left of the screen. Name and Ammo
         if(CheckAmmo())
-            GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weaponClipSize);
+            GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weapon.ClipSize);
         else
             GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40), weaponName + " \n'R' to Reload");
 
