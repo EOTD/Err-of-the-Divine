@@ -198,7 +198,8 @@ public class WeaponBehavior : MonoBehaviour {
         StopAllCoroutines();
     }
 
-
+    public Texture2D crosshair;
+    
     void OnGUI() {
         // Weapon Information at bottom left of the screen. Name and Ammo
         if(CheckAmmo())
@@ -206,7 +207,6 @@ public class WeaponBehavior : MonoBehaviour {
         else
             GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40), weaponName + " \n'R' to Reload");
 
-        // Temporary Crosshair
-        GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 10f, 10f), "x");
+        GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, 50f, 50f), crosshair);
     }
 }

@@ -1,24 +1,42 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameUI : MonoBehaviour {
 
-	//// Use this for initialization
-	//void Start () {
-	
-	//}
-	
-	//// Update is called once per frame
-	//void Update () {
-	
-	//}
+    //// Use this for initialization
+    //void Start () {
 
-    void OnGUI() {
-        GUI.TextField(new Rect(Screen.width*0.03f, Screen.height - 50, 50f, 40),"Yuima");
+    //}
 
-        GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 50, 150f, 20), "Divinity: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerDivinity );
-        GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 30, 150f, 20), "Health: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerHealth);
+    //// Update is called once per frame
+    //void Update () {
 
-        GUI.TextField(new Rect(Screen.width * 0.03f, Screen.height - 200, 50f, 150), "\n g \n o \n d \n\n t \n y \n p \n e");
+    //}
+
+    Player player;
+    public Slider health;
+    public Slider divinity;
+
+    void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
+
+    void FixedUpdate() {
+        health.value = player.stat.playerHealth * 0.01f;
+        divinity.value = player.stat.playerDivinity * 0.01f;
+        //GUI.TextField(new Rect(Screen.width*0.03f, Screen.height - 50, 50f, 40),"Yuima");
+
+        //GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 50, 150f, 20), "Divinity: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerDivinity );
+        //GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 30, 150f, 20), "Health: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerHealth);
+
+
+        //GUI.DrawTexture(new Rect(Screen.width/2, Screen.height - 300, Screen.width/2, Screen.height/2), health);
+
+
+        //GUI.TextField(new Rect(Screen.width * 0.03f, Screen.height - 200, 50f, 150), "\n g \n o \n d \n\n t \n y \n p \n e");
+        // Temporary Crosshair
+        
+    }
+    
 }
