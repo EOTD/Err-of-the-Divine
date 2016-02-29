@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WeaponBehavior : MonoBehaviour {
 
-    [SerializeField] private uint weaponID;
+    [SerializeField] public uint weaponID;
 
     Weapon weapon;
 
@@ -21,7 +21,7 @@ public class WeaponBehavior : MonoBehaviour {
 
     private bool isReloading;
 
-    private uint clipSize;
+    public uint clipSize;
 
     public GameObject particle;
 
@@ -48,6 +48,9 @@ public class WeaponBehavior : MonoBehaviour {
                     InitiateWeaponBehavior();
                 }
                 break;
+
+
+
             case WeaponType.Manual:
                 if (Input.GetMouseButtonDown(0) && Fireable()) {
                     // Set shooting position to the center of the Camera.
@@ -60,6 +63,9 @@ public class WeaponBehavior : MonoBehaviour {
                 }
                 break;
         }
+
+
+
 
         // Reload Key R
         if (Input.GetKeyDown(KeyCode.R)) {
@@ -193,7 +199,7 @@ public class WeaponBehavior : MonoBehaviour {
 
     public void Reinitialize() {
         reloadTime = 0;
-        rateTime = weapon.Rate;
+        rateTime = Utilities.GetWeaponData(weaponID).Rate;
         isReloading = false;
         StopAllCoroutines();
     }
@@ -202,10 +208,10 @@ public class WeaponBehavior : MonoBehaviour {
     
     void OnGUI() {
         // Weapon Information at bottom left of the screen. Name and Ammo
-        if(CheckAmmo())
-            GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weapon.ClipSize);
-        else
-            GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40), weaponName + " \n'R' to Reload");
+        //if(CheckAmmo())
+        //    GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weapon.ClipSize);
+        //else
+        //    GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40), weaponName + " \n'R' to Reload");
 
         GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, 50f, 50f), crosshair);
     }

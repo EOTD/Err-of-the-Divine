@@ -18,13 +18,21 @@ public class GameUI : MonoBehaviour {
     public Slider health;
     public Slider divinity;
 
-    void Awake() {
+    private WeaponBehavior weapon;
+
+    void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     void FixedUpdate() {
         health.value = player.stat.playerHealth * 0.01f;
-        divinity.value = player.stat.playerDivinity * 0.01f;
+
+        weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<WeaponBehavior>();
+
+
+        divinity.maxValue = Utilities.GetWeaponData(weapon.weaponID).ClipSize;
+        divinity.value = weapon.clipSize;
+
         //GUI.TextField(new Rect(Screen.width*0.03f, Screen.height - 50, 50f, 40),"Yuima");
 
         //GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 50, 150f, 20), "Divinity: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerDivinity );
