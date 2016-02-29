@@ -14,6 +14,9 @@ public class Utilities : MonoBehaviour {
             case "Mercury":
                 target.GetComponent<MercuryAI>().currentHealth += damage;
                 break;
+            case "Civillian":
+                target.GetComponent<CivillianAI>().currentHealth += damage;
+                break;
 
             default:
                 break;

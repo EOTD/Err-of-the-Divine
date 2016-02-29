@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class WeaponBehavior : MonoBehaviour {
@@ -25,7 +26,8 @@ public class WeaponBehavior : MonoBehaviour {
 
     public GameObject particle;
 
-	
+    //public Text reloadText;	
+
 	void Start () {
         SetWeaponData();
 	}
@@ -161,7 +163,6 @@ public class WeaponBehavior : MonoBehaviour {
         weapon = Utilities.GetWeaponData(weaponID);
         weaponName = Utilities.GetItemData(weaponID).Name;
 
-
         clipSize = weapon.ClipSize;
         rateTime = weapon.Rate;
     }
@@ -211,6 +212,10 @@ public class WeaponBehavior : MonoBehaviour {
         //if(CheckAmmo())
         //    GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40),weaponName+" \nAmmo: "+clipSize+" / "+weapon.ClipSize);
         //else
+        //if (!CheckAmmo())
+        //    reloadText.gameObject.SetActive(true);
+        //else
+        //    reloadText.gameObject.SetActive(false);
         //    GUI.TextField(new Rect(Screen.width - 150, Screen.height - 50, 100f, 40), weaponName + " \n'R' to Reload");
 
         GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, 50f, 50f), crosshair);

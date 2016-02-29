@@ -106,6 +106,9 @@ public class MercuryAI : MonoBehaviour {
                 case State.Dodge:
                     Dodge();
                     break;
+                case State.Flee:
+                    Flee();
+                    break;
 
                 case State.Attack:
                     Attack(attackType);
@@ -547,6 +550,39 @@ public class MercuryAI : MonoBehaviour {
 		}
 	}
 
+    GameObject[] fleePoints;
+    GameObject fleeTarget;
+    Transform fleePos;
+    private float fleeDistance;
+    private bool fleeing;
+
+    void Flee() {
+
+        fleeTarget = GameObject.FindGameObjectsWithTag("Flee")[0];
+        fleeDistance = Vector3.Distance(transform.position, fleePoints[0].transform.position);
+
+        //foreach (GameObject go in fleePoints) {
+        //    if (Vector3.Distance(transform.position, go.transform.position) < fleeDistance && Vector3.Distance(player.transform.position, go.transform.position) > 20f) {
+        //            fleeDistance = Vector3.Distance(transform.position, go.transform.position);
+        //            fleeTarget = go;
+        //    }
+
+        //}
+
+        if (!fleeing) {
+            fleePos = fleePoints[Random.Range(0, fleePoints.Length)].transform;
+            fleeing = true;
+        }
+
+
+        if(Vector3.Distance(transform.position,fleePos.position) < 5f) {
+            fleeing = false;
+        }
+
+        agent.Resume();
+        agent.SetDestination(fleePos.position);
+    }
+
 	private void Capture(){
 		Debug.Log ("Capture");
 		GameObject temp = null;
@@ -596,6 +632,7 @@ public class MercuryAI : MonoBehaviour {
 
 		myTransform = transform;
 		player = GameObject.FindGameObjectWithTag("Player");
+        fleePoints = GameObject.FindGameObjectsWithTag("Flee");
 
 		/* Nav Mesh Properties */
 		agent = GetComponent<NavMeshAgent> ();
@@ -616,6 +653,7 @@ public class MercuryAI : MonoBehaviour {
 	private void CheckHealth(){
 		if (currentHealth <= 0) {
 			isDead = true;
+            gameObject.SetActive(false);
 		}
 	}
 

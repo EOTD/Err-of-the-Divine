@@ -43,7 +43,7 @@ public class CivillianAI : MonoBehaviour {
 	
 	private IEnumerator FSM(){
 		while (!isDead) {
-			
+            Death();
 			switch(state){
 
 			case State.Idle:
@@ -77,6 +77,8 @@ public class CivillianAI : MonoBehaviour {
         // Getting the Monster Data here from the Mob Database
         // md = Utilities.GetMobData("Malice");
         /////////////////////////////////////////////////////
+
+        currentHealth = maxHealth;
 
         mercury = GameObject.FindGameObjectWithTag ("Mercury").GetComponent<MercuryAI> ();
 
@@ -112,13 +114,31 @@ public class CivillianAI : MonoBehaviour {
 		agent.enabled = true;
 		//Debug.Log ("Idling");
 	}
-	
-	private void Wander(){
-		agent.enabled = true;
-		Debug.Log ("Wandering");
-	}
 
-	private void Flee(){
+    // Wander Variables
+    private float wanderTime;
+    public float wanderDelay = 3;
+    private float maxWalkDistance = 15.0f;
+
+    private void Wander() {
+        agent.Resume();
+        agent.speed = 7;
+        agent.stoppingDistance = 5;
+
+        if (Time.time > wanderTime) {
+            Vector3 direction = Random.insideUnitSphere * maxWalkDistance;
+            direction += transform.position;
+            NavMeshHit hit;
+            NavMesh.SamplePosition(direction, out hit, Random.Range(0f, maxWalkDistance), 1);
+
+            Vector3 destination = hit.position;
+            agent.SetDestination(destination);
+
+            wanderTime = Time.time + wanderDelay;
+        }
+    }
+
+    private void Flee(){
 		agent.enabled = true;
 
 	}
@@ -140,5 +160,14 @@ public class CivillianAI : MonoBehaviour {
 		}
 
 	}
+
+
+    void Death() {
+
+        if(currentHealth <= 0) {
+            isDead = true;
+            gameObject.SetActive(false);
+        }
+    }
 	
 }

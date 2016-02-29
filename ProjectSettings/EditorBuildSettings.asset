@@ -6,4 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Err of the Divine/JimStuff/TitleScreen/TitleScreen.unity
+  - enabled: 1
     path: Assets/Err of the Divine/Scenes/1.unity

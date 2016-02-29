@@ -22,12 +22,18 @@ public class GameUI : MonoBehaviour {
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        Cursor.visible = false;
     }
 
-    void FixedUpdate() {
+    void Update() {
         health.value = player.stat.playerHealth * 0.01f;
 
-        weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<WeaponBehavior>();
+        foreach (GameObject weap in GameObject.FindGameObjectsWithTag("Weapon")) {
+            if(weap.activeInHierarchy)
+                weapon = weap.GetComponent<WeaponBehavior>();
+        }
+
 
 
         divinity.maxValue = Utilities.GetWeaponData(weapon.weaponID).ClipSize;
@@ -44,7 +50,11 @@ public class GameUI : MonoBehaviour {
 
         //GUI.TextField(new Rect(Screen.width * 0.03f, Screen.height - 200, 50f, 150), "\n g \n o \n d \n\n t \n y \n p \n e");
         // Temporary Crosshair
+        if (Input.GetKey(KeyCode.Escape)) {
+            Cursor.visible = !Cursor.visible;
+        }
         
     }
+
     
 }

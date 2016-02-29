@@ -133,6 +133,7 @@ public class Database : MonoBehaviour {
     private JsonData GetTextData(string filename) {
         //return JsonMapper.ToObject(File.ReadAllText(Application.dataPath + fileDirectory + filename));
         return JsonMapper.ToObject(File.ReadAllText(Application.streamingAssetsPath + fileDirectory + filename));
+
     }
 
     private void StoreDatabase() {

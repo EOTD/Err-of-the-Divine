@@ -159,7 +159,7 @@ public class MinionAI : MonoBehaviour {
 	}
 	
 	private void Wander(){
-		Debug.Log ("Wandering");
+    
 	}
 
     public void Stunned() {

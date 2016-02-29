@@ -8,6 +8,8 @@ TagManager:
   - Civillian
   - Wall
   - Weapon
+  - ReloadText
+  - Flee
   layers:
   - Default
   - TransparentFX
