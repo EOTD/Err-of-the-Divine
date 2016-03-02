@@ -15,7 +15,7 @@ public class JupiterBolt : MonoBehaviour {
 	public int damage;
 	
 	void OnCollisionEnter(Collision other){
-		if (other.gameObject.tag != "Player"){ // because we don't want the grenade to disappear as soon as you throw it
+		if (other.gameObject.tag != "Player" && other.gameObject.tag != "MainCamera"){ // because we don't want the grenade to disappear as soon as you throw it
 			GrenadeEffect();
 			Destroy(this.gameObject);
 		}
@@ -33,11 +33,10 @@ public class JupiterBolt : MonoBehaviour {
 
 			if (mAI != null){
 				Debug.Log("Hit Enemy");
-				mAI.state = MercuryAI.State.Idle;
+				Utilities.Stun(mAI.gameObject);
 				mAI.currentHealth -= damage;
 				//hit.GetComponent<MercuryAI>().state = MercuryAI.State.Idle;
 			}
-
 		}
 	}
 }

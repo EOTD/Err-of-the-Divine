@@ -8,7 +8,7 @@ public class AbilityManager : MonoBehaviour {
 
 	// The name of the abilities are the same as the god they get the ability from
 	[HideInInspector]
-	public enum Ability{Feronia, Jupiter, Mars};
+	public enum Ability{Feronia, Jupiter, Mercury};
 
 	[HideInInspector]
 	public List<Ability> abilities = new List<Ability>(); // Using a list because it's easier to add to a list than to an array
@@ -24,8 +24,8 @@ public class AbilityManager : MonoBehaviour {
 	void Awake(){
 		abilities.Clear();
 		abilities.Add(Ability.Feronia);
-		//abilities.Add(Ability.Jupiter);
-		//abilities.Add(Ability.Mars);
+		abilities.Add(Ability.Jupiter);
+		abilities.Add(Ability.Mercury);
 	}
 
 	void Update(){

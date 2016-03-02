@@ -39,12 +39,13 @@ public class CivillianAI : MonoBehaviour {
 	private MercuryAI mercury;
 	
 	
-	public bool isDead, isCaught;
+	public bool isDead, isCaught, isRun , isIdle;
 	
 	private IEnumerator FSM(){
 		while (!isDead) {
-            Death();
-			switch(state){
+            DeathCheck();
+            Animations();
+            switch (state){
 
 			case State.Idle:
 				Idle();
@@ -81,6 +82,7 @@ public class CivillianAI : MonoBehaviour {
         currentHealth = maxHealth;
 
         mercury = GameObject.FindGameObjectWithTag ("Mercury").GetComponent<MercuryAI> ();
+        Controller = GetComponent<Animator>();
 
 		/* Nav Mesh Properties */
 		agent = GetComponent<NavMeshAgent> ();
@@ -112,29 +114,46 @@ public class CivillianAI : MonoBehaviour {
 	
 	private void Idle(){
 		agent.enabled = true;
+
+        isIdle = true;
+
 		//Debug.Log ("Idling");
 	}
 
     // Wander Variables
     private float wanderTime;
     public float wanderDelay = 3;
-    private float maxWalkDistance = 15.0f;
+    private float maxWalkDistance = 20.0f;
+    private float minWalkDistance = 10f;
+    Vector3 destination;
 
     private void Wander() {
-        agent.Resume();
         agent.speed = 7;
         agent.stoppingDistance = 5;
 
+        
         if (Time.time > wanderTime) {
             Vector3 direction = Random.insideUnitSphere * maxWalkDistance;
             direction += transform.position;
             NavMeshHit hit;
-            NavMesh.SamplePosition(direction, out hit, Random.Range(0f, maxWalkDistance), 1);
+            NavMesh.SamplePosition(direction, out hit, Random.Range(minWalkDistance, maxWalkDistance), 1);
 
-            Vector3 destination = hit.position;
-            agent.SetDestination(destination);
-
+            destination = hit.position;
             wanderTime = Time.time + wanderDelay;
+        } 
+
+        if(Time.time < wanderTime) {
+            agent.Resume();
+            agent.SetDestination(destination);
+            isRun = true;
+            isIdle = false;
+        }
+
+        if(Vector3.Distance(transform.position,destination) <= agent.stoppingDistance) {
+            agent.SetDestination(transform.position);
+            agent.Stop();
+            isRun = false;
+            isIdle = true;
         }
     }
 
@@ -161,11 +180,36 @@ public class CivillianAI : MonoBehaviour {
 
 	}
 
+    void ResetAnimations() {
+        if (currentState != state) {
+            currentState = state;
+            isRun = false;
+            isIdle = false;
+        }
+    }
 
-    void Death() {
+    Animator Controller;
+    void Animations() {
+        ResetAnimations();
 
+        if (isRun) {
+            Controller.SetBool("Moving", true);
+        }
+        else
+            Controller.SetBool("Moving", false);
+
+
+        if (isIdle) {
+            Controller.SetBool("Idle", true);
+        }
+        else
+            Controller.SetBool("Idle", false);
+    }
+
+    void DeathCheck() {
         if(currentHealth <= 0) {
             isDead = true;
+            agent.Stop();
             gameObject.SetActive(false);
         }
     }

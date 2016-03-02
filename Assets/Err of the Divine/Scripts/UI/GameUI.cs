@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour {
 
@@ -55,6 +56,13 @@ public class GameUI : MonoBehaviour {
         }
         
     }
+
+    void OnGUI() {
+        if(GUI.Button(new Rect(Screen.width - 100, 0, 100, 50), "Restart")){
+            SceneManager.LoadScene(1);
+        }
+    }
+
 
     
 }

@@ -27,7 +27,7 @@ public class JupiterBoltAbility : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.F) && manager.abilities[manager.i].ToString() == "Jupiter" && manager.divinity > castCost){
 			manager.divinity -= castCost;
 			// Play animation, add bool or ienum for timing throw with animation
-			grenadeClone = Instantiate(grenade ,transform.position + transform.forward, new Quaternion(0,0,90,0)) as GameObject;
+			grenadeClone = Instantiate(grenade ,transform.position + transform.forward + transform.up, new Quaternion(0,0,90,0)) as GameObject;
 			grenadeClone.GetComponent<Rigidbody>().velocity = (transform.forward * throwSpeed) + transform.up;
 		}
 	}
