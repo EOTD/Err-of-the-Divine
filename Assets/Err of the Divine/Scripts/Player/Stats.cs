@@ -4,7 +4,7 @@ public class Stats {
     public float playerHealth = 100f;
     public float playerRegenRate = 1f;
     public float playerRegenDelay = 1f;
-    public float playerDivinity = 10f;
+    public float playerDivinity = 100f;
     public float playerDivinityRate = 1f;
     public float playerWalkSpeed = 20f;
     public float playerSprintSpeed = 35f;

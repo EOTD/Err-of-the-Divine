@@ -165,7 +165,173 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_L/Mercery_Rig:JT_knee_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_L/Mercery_Rig:JT_knee_L/Mercery_Rig:JT_ankle_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_L/Mercery_Rig:JT_knee_L/Mercery_Rig:JT_ankle_L/Mercery_Rig:JT_ball_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_L/Mercery_Rig:JT_knee_L/Mercery_Rig:JT_ankle_L/Mercery_Rig:JT_ball_L/Mercery_Rig:JT_toe_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_R/Mercery_Rig:JT_knee_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_R/Mercery_Rig:JT_knee_R/Mercery_Rig:JT_ankle_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_R/Mercery_Rig:JT_knee_R/Mercery_Rig:JT_ankle_R/Mercery_Rig:JT_ball_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_leg_R/Mercery_Rig:JT_knee_R/Mercery_Rig:JT_ankle_R/Mercery_Rig:JT_ball_R/Mercery_Rig:JT_toe_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_fingerThumb_L_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_fingerThumb_L_1/Mercery_Rig:JT_fingerThumb_L_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_fingerThumb_L_1/Mercery_Rig:JT_fingerThumb_L_2/Mercery_Rig:JT_fingerThumb_L_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_fingerThumb_L_1/Mercery_Rig:JT_fingerThumb_L_2/Mercery_Rig:JT_fingerThumb_L_3/Mercery_Rig:JT_fingerThumb_L_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerIndex_L_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerIndex_L_1/Mercery_Rig:JT_fingerIndex_L_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerIndex_L_1/Mercery_Rig:JT_fingerIndex_L_2/Mercery_Rig:JT_fingerIndex_L_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerIndex_L_1/Mercery_Rig:JT_fingerIndex_L_2/Mercery_Rig:JT_fingerIndex_L_3/Mercery_Rig:JT_fingerIndex_L_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerMiddle_L_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerMiddle_L_1/Mercery_Rig:JT_fingerMiddle_L_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerMiddle_L_1/Mercery_Rig:JT_fingerMiddle_L_2/Mercery_Rig:JT_fingerMiddle_L_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerMiddle_L_1/Mercery_Rig:JT_fingerMiddle_L_2/Mercery_Rig:JT_fingerMiddle_L_3/Mercery_Rig:JT_fingerMiddle_L_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerPinky_L_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerPinky_L_1/Mercery_Rig:JT_fingerPinky_L_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerPinky_L_1/Mercery_Rig:JT_fingerPinky_L_2/Mercery_Rig:JT_fingerPinky_L_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerPinky_L_1/Mercery_Rig:JT_fingerPinky_L_2/Mercery_Rig:JT_fingerPinky_L_3/Mercery_Rig:JT_fingerPinky_L_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerRing_L_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerRing_L_1/Mercery_Rig:JT_fingerRing_L_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerRing_L_1/Mercery_Rig:JT_fingerRing_L_2/Mercery_Rig:JT_fingerRing_L_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_L/Mercery_Rig:JT_arm_L/Mercery_Rig:JT_elbow_L/Mercery_Rig:JT_wrist_L/Mercery_Rig:JT_wrist_end_L/Mercery_Rig:JT_fingerRing_L_1/Mercery_Rig:JT_fingerRing_L_2/Mercery_Rig:JT_fingerRing_L_3/Mercery_Rig:JT_fingerRing_L_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_fingerThumb_R_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_fingerThumb_R_1/Mercery_Rig:JT_fingerThumb_R_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_fingerThumb_R_1/Mercery_Rig:JT_fingerThumb_R_2/Mercery_Rig:JT_fingerThumb_R_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_fingerThumb_R_1/Mercery_Rig:JT_fingerThumb_R_2/Mercery_Rig:JT_fingerThumb_R_3/Mercery_Rig:JT_fingerThumb_R_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerIndex_R_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerIndex_R_1/Mercery_Rig:JT_fingerIndex_R_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerIndex_R_1/Mercery_Rig:JT_fingerIndex_R_2/Mercery_Rig:JT_fingerIndex_R_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerIndex_R_1/Mercery_Rig:JT_fingerIndex_R_2/Mercery_Rig:JT_fingerIndex_R_3/Mercery_Rig:JT_fingerIndex_R_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerMiddle_R_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerMiddle_R_1/Mercery_Rig:JT_fingerMiddle_R_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerMiddle_R_1/Mercery_Rig:JT_fingerMiddle_R_2/Mercery_Rig:JT_fingerMiddle_R_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerMiddle_R_1/Mercery_Rig:JT_fingerMiddle_R_2/Mercery_Rig:JT_fingerMiddle_R_3/Mercery_Rig:JT_fingerMiddle_R_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerPinky_R_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerPinky_R_1/Mercery_Rig:JT_fingerPinky_R_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerPinky_R_1/Mercery_Rig:JT_fingerPinky_R_2/Mercery_Rig:JT_fingerPinky_R_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerPinky_R_1/Mercery_Rig:JT_fingerPinky_R_2/Mercery_Rig:JT_fingerPinky_R_3/Mercery_Rig:JT_fingerPinky_R_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerRing_R_1
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerRing_R_1/Mercery_Rig:JT_fingerRing_R_2
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerRing_R_1/Mercery_Rig:JT_fingerRing_R_2/Mercery_Rig:JT_fingerRing_R_3
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:JT_wrist_end_R/Mercery_Rig:JT_fingerRing_R_1/Mercery_Rig:JT_fingerRing_R_2/Mercery_Rig:JT_fingerRing_R_3/Mercery_Rig:JT_fingerRing_R_4
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_clav_R/Mercery_Rig:JT_arm_R/Mercery_Rig:JT_elbow_R/Mercery_Rig:JT_wrist_R/Mercery_Rig:Weapon_Bone
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_neck
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_neck/Mercery_Rig:JT_head
+        weight: 1
+      - path: Mercery_Rig:JT_pelvis/Mercery_Rig:JT_spine_1/Mercery_Rig:JT_spine_2/Mercery_Rig:JT_spine_3/Mercery_Rig:JT_neck/Mercery_Rig:JT_head/Mercery_Rig:JT_headend
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

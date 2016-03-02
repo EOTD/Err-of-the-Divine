@@ -10,9 +10,12 @@ public class MercuryAI : MonoBehaviour {
 		get { return instance; }
 		set { instance = value; }
 	}
-	
-	/* --------- HP / Hunger ---------*/
-	[Header("Statistics")]
+
+    /* --------- Animator ---------*/
+    private Animator Controller;
+
+    /* --------- HP / Hunger ---------*/
+    [Header("Statistics")]
 	public int currentHealth; 
 	public int maxHealth, currentHunger, maxHunger;
 
@@ -65,7 +68,7 @@ public class MercuryAI : MonoBehaviour {
 
     [Header("Conditions")]
 	public bool isDead;
-	public bool isHungry, isDodging, isStunned;
+	public bool isHungry, isDodging, isStunned, isRun, isIdle;
 
     [Header("Reactions")]
     public float stunTime;
@@ -73,7 +76,7 @@ public class MercuryAI : MonoBehaviour {
 
     private IEnumerator FSM(){
 		while (!isDead) {
-
+            Animations();
 			CheckHunger(); // Checks and Toggle's current Hunger
 			CheckHealth (); // Check and Toggle's current Health
 			UpdateAIBehavior();
@@ -569,6 +572,8 @@ public class MercuryAI : MonoBehaviour {
 
         //}
 
+        isRun = true;
+
         if (!fleeing) {
             fleePos = fleePoints[Random.Range(0, fleePoints.Length)].transform;
             fleeing = true;
@@ -633,6 +638,7 @@ public class MercuryAI : MonoBehaviour {
 		myTransform = transform;
 		player = GameObject.FindGameObjectWithTag("Player");
         fleePoints = GameObject.FindGameObjectsWithTag("Flee");
+        Controller = GetComponent<Animator>();
 
 		/* Nav Mesh Properties */
 		agent = GetComponent<NavMeshAgent> ();
@@ -726,5 +732,40 @@ public class MercuryAI : MonoBehaviour {
 
 		return false;
 	}
+
+
+
+
+
+
+
+
+
+    /* Animations Controls Here */
+    void Animations() {
+        ResetAnimations();
+
+        if (isRun) {
+            Controller.SetBool("Running", true);
+        }
+        else
+            Controller.SetBool("Running", false);
+
+
+        if (isIdle) {
+            Controller.SetBool("Idle", true);
+        }
+        else
+            Controller.SetBool("Idle", false);
+    }
+
+
+    void ResetAnimations() {
+        if (currentState != state) {
+            currentState = state;
+            isRun = false;
+            isIdle = false;
+        }
+    }
 
 }

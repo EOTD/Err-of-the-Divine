@@ -11,9 +11,12 @@ namespace UnityStandardAssets.Characters.FirstPerson{
 
 		private AbilityManager manager; // Get the AbilityManager script to keep track of current ability
 
+        Player player;
+
 		void Start(){
 			manager = GetComponent<AbilityManager>();
 			controller = GetComponent<FirstPersonController>();
+            player = Player.Instance;
 		}
 
 		// Update is called once per frame
@@ -24,6 +27,8 @@ namespace UnityStandardAssets.Characters.FirstPerson{
 				controller.m_RunSpeed = 50f;
 				controller.m_WalkSpeed = 50f;
 				Invoke("revertSpeed", 0.3f);
+                player.currentDivinity -= 10f;
+                Debug.Log(player.currentDivinity);
 			}
 		}
 

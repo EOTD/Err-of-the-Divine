@@ -17,6 +17,7 @@ public class GameUI : MonoBehaviour {
 
     Player player;
     public Slider health;
+    public Slider ammo;
     public Slider divinity;
 
     private WeaponBehavior weapon;
@@ -37,9 +38,12 @@ public class GameUI : MonoBehaviour {
 
 
 
-        divinity.maxValue = Utilities.GetWeaponData(weapon.weaponID).ClipSize;
-        divinity.value = weapon.clipSize;
+        ammo.maxValue = Utilities.GetWeaponData(weapon.weaponID).ClipSize;
+        ammo.value = weapon.clipSize;
 
+        divinity.maxValue = Player.Instance.stat.playerDivinity;
+        divinity.value = Player.Instance.currentDivinity; 
+        
         //GUI.TextField(new Rect(Screen.width*0.03f, Screen.height - 50, 50f, 40),"Yuima");
 
         //GUI.TextField(new Rect(Screen.width * 0.09f, Screen.height - 50, 150f, 20), "Divinity: " + GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().stat.playerDivinity );
