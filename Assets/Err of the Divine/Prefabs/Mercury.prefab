@@ -914,7 +914,7 @@ GameObject:
   - 136: {fileID: 13630108}
   m_Layer: 0
   m_Name: Mercury
-  m_TagString: Untagged
+  m_TagString: Mercury
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2926,7 +2926,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112096}
-  m_LocalRotation: {x: 0.6719099, y: -0.2224376, z: 0.6672077, w: -0.23214774}
+  m_LocalRotation: {x: 0.6719099, y: -0.22243758, z: 0.6672077, w: -0.23214771}
   m_LocalPosition: {x: 1.9642307e-20, y: 0.0015574754, z: 4.329588e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3812,6 +3812,8 @@ MonoBehaviour:
   isHungry: 0
   isDodging: 0
   isStunned: 0
+  isRun: 0
+  isIdle: 0
   stunTime: 0
   stunDelay: 10
   dodgeTime: 0

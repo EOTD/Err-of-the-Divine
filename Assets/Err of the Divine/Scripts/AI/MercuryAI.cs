@@ -572,6 +572,8 @@ public class MercuryAI : MonoBehaviour {
 
         //}
 
+        
+
         isRun = true;
 
         if (!fleeing) {
@@ -584,7 +586,20 @@ public class MercuryAI : MonoBehaviour {
             fleeing = false;
         }
 
+        Vector3 path = new Vector3(agent.steeringTarget.x,transform.position.y,agent.steeringTarget.z);
+
+        //float distance = Vector3.Distance (transform.position, player.transform.position);
+        Vector3 dir = (path - transform.position).normalized;
+        float direction = Vector3.Dot(dir, transform.forward);
+
+        // Smooth Look-At Player
+        if (direction < 1f) {
+            Quaternion targetRotation = Quaternion.LookRotation(path - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 7 * Time.deltaTime);
+        }
+
         agent.Resume();
+        agent.updateRotation = true;
         agent.SetDestination(fleePos.position);
     }
 
