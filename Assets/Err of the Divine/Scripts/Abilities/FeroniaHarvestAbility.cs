@@ -13,6 +13,7 @@ public class FeroniaHarvestAbility : MonoBehaviour {
 	private bool main = true; // Are we on the main or sub ability?
 
 	public float penetrateRadius = 500f;
+	private bool turnOn = false;
 	
 	private AbilityManager manager; // Get the AbilityManager script to keep track of current ability
 
@@ -36,6 +37,12 @@ public class FeroniaHarvestAbility : MonoBehaviour {
 			Debug.Log ("murrrrrrrr");
 			whip.SetActive (true); // Temporary for testing
 			isHarvesting = true;
+
+			if (!whip.GetComponent<FeroniaHarvest>().enemyHit){
+				whip.SetActive(false); // Temporary for testing
+				isHarvesting = false;
+				harvestTime = 10000f;
+			}
 		}
 
 		else if (Input.GetKeyUp (KeyCode.F) && manager.abilities [manager.i].ToString () == "Feronia" && isHarvesting && main) {
@@ -55,36 +62,35 @@ public class FeroniaHarvestAbility : MonoBehaviour {
 	// End main ability checks
 
 	// Begin sub ability checks
-		else if (Input.GetKeyDown (KeyCode.F) && manager.abilities [manager.i].ToString () == "Feronia" && !main) {
-			manager.divinity -= subCost;
+		if (Input.GetKeyDown (KeyCode.T)) {
+			turnOn = !turnOn;
 
-			Collider[] colliders = Physics.OverlapSphere (this.transform.position, penetrateRadius, 1 << 10); // Find all colliders on layer 10
-			foreach (Collider hit in colliders) {
+			if(turnOn && manager.divinity > mainCost){
+				manager.divinity -= subCost;
 
-				ChangeMat mat = hit.GetComponent<ChangeMat> ();
+				Collider[] colliders = Physics.OverlapSphere (this.transform.position, penetrateRadius, 1 << 10); // Find all colliders on layer 10
+				foreach (Collider hit in colliders) {
 
-				if (mat != null) {
-					mat.changeMat (); // Call changeMat function to change the material to penetrate
+					ChangeMat mat = hit.GetComponent<ChangeMat> ();
+
+					if (mat != null) {
+						mat.changeMat (); // Call changeMat function to change the material to penetrate
+					}
 				}
 			}
-		} else if (Input.GetKeyUp (KeyCode.F) && manager.abilities [manager.i].ToString () == "Feronia" && !main && manager.divinity > subCost) {
+			else if (!turnOn) {
 
-			Collider[] colliders = Physics.OverlapSphere (this.transform.position, penetrateRadius, 1 << 10);
-			foreach (Collider hit in colliders) {
+				Collider[] colliders = Physics.OverlapSphere (this.transform.position, penetrateRadius, 1 << 10);
+				foreach (Collider hit in colliders) {
 
-				ChangeMat mat = hit.GetComponent<ChangeMat> ();
-				
-				if (mat != null) {
-					mat.changeMat (); // Change material back to the normal one
+					ChangeMat mat = hit.GetComponent<ChangeMat> ();
+					
+					if (mat != null) {
+						mat.changeMat (); // Change material back to the normal one
+					}
 				}
 			}
 		}
 	// End sub ability checks
-
-	// Toggle between main and sub abilities
-		if (Input.GetKeyDown (KeyCode.T)){
-			Debug.Log("not main");
-			main = !main;
-		}
 	}
 }
