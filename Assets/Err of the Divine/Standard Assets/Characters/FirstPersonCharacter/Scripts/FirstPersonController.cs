@@ -41,6 +41,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+		public bool notDashing = true;
+		public bool defaultCharControl = true;
+		public float abilitySpeed = 0;
 
         // Use this for initialization
         private void Start()
@@ -94,41 +97,80 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            float speed;
-            GetInput(out speed);
-            // always move along the camera forward as it is the direction that it being aimed at
-            Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
+			if (defaultCharControl){
+	            float speed;
+	            GetInput(out speed);
+	            // always move along the camera forward as it is the direction that it being aimed at
+	            Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
-            // get a normal for the surface that is being touched to move along it
-            RaycastHit hitInfo;
-            Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
-                               m_CharacterController.height/2f);
-            desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
+	            // get a normal for the surface that is being touched to move along it
+	            RaycastHit hitInfo;
+	            Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
+	                               m_CharacterController.height/2f);
+	            desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
-            m_MoveDir.x = desiredMove.x*speed;
-            m_MoveDir.z = desiredMove.z*speed;
+	            m_MoveDir.x = desiredMove.x*speed;
+	            m_MoveDir.z = desiredMove.z*speed;
 
 
-            if (m_CharacterController.isGrounded)
-            {
-                m_MoveDir.y = -m_StickToGroundForce;
+	            if (m_CharacterController.isGrounded)
+	            {
+	                m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
-                {
-                    m_MoveDir.y = m_JumpSpeed;
-                    PlayJumpSound();
-                    m_Jump = false;
-                    m_Jumping = true;
-                }
-            }
-            else
-            {
-                m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-            }
-            m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+	                if (m_Jump)
+	                {
+	                    m_MoveDir.y = m_JumpSpeed;
+	                    PlayJumpSound();
+	                    m_Jump = false;
+	                    m_Jumping = true;
+	                }
+	            }
+	            else
+	            {
+	                m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+	            }
+	            m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
-            ProgressStepCycle(speed);
-            UpdateCameraPosition(speed);
+	            ProgressStepCycle(speed);
+	            UpdateCameraPosition(speed);
+			}
+			else{
+				//float abilitySpeed;
+				GetInput(out abilitySpeed);
+				// always move along the camera forward as it is the direction that it being aimed at
+				Vector3 desiredMove = m_Camera.transform.forward;
+
+				// get a normal for the surface that is being touched to move along it
+				RaycastHit hitInfo;
+				Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
+					m_CharacterController.height/2f);
+				desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
+
+				m_MoveDir.x = desiredMove.x* abilitySpeed;
+				m_MoveDir.z = desiredMove.z* abilitySpeed;
+
+
+				if (m_CharacterController.isGrounded)
+				{
+					m_MoveDir.y = -m_StickToGroundForce;
+
+					if (m_Jump)
+					{
+						m_MoveDir.y = m_JumpSpeed;
+						PlayJumpSound();
+						m_Jump = false;
+						m_Jumping = true;
+					}
+				}
+				else
+				{
+					m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
+				}
+				m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
+
+				ProgressStepCycle(abilitySpeed);
+				UpdateCameraPosition(abilitySpeed);
+			}
         }
 
 
@@ -214,6 +256,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+			abilitySpeed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
@@ -233,8 +276,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         private void RotateView()
-        {
-            m_MouseLook.LookRotation (transform, m_Camera.transform);
+        {	
+			if (notDashing){
+           		m_MouseLook.LookRotation (transform, m_Camera.transform);
+			}
         }
 
 
